@@ -1,4 +1,6 @@
+import 'package:bookticket/screens/hotel_screen.dart';
 import 'package:bookticket/screens/ticket_view.dart';
+import 'package:bookticket/utils/app_info_list.dart';
 import 'package:bookticket/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -90,19 +92,47 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Gap(16),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 16),
+            child: Row(
+              children: const [
+                TicketView(),
+                TicketView(),
+                TicketView(),
+                TicketView(),
+              ],
+            ),
+          ),
+          // const Gap(8),
           Container(
-            width: 200,
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.only(left: 16),
-              child: Row(
-                children: [
-                  TicketView(),
-                  TicketView(),
-                  TicketView(),
-                  TicketView(),
-                ],
-              ),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Hotels',
+                  style: AppStyles.headlineStyle2,
+                ),
+                InkWell(
+                  onTap: () {
+                    print('you tapped.');
+                  },
+                  child: Text(
+                    'View All',
+                    style: AppStyles.textStyle
+                        .copyWith(color: AppStyles.primaryColor),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Gap(8),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 16),
+            child: Row(
+              children: hotelList.map((e) => HotelScreen(hotel: e)).toList(),
             ),
           ),
         ],
