@@ -1,5 +1,6 @@
 import 'package:bookticket/screens/chat_screen.dart';
 import 'package:bookticket/screens/home_screen.dart';
+import 'package:bookticket/screens/search_screen.dart';
 import 'package:bookticket/screens/setting_screen.dart';
 import 'package:bookticket/screens/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -13,11 +14,11 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
-  int _selectedBottomItem = 0;
+  int _selectedBottomItem = 1;
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
+    const SearchScreen(),
     const TicketScreen(),
-    const ChatScreen(),
     const SettingScreen(),
   ];
 
@@ -49,14 +50,14 @@ class _BottomBarState extends State<BottomBar> {
                 activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled),
                 label: 'Home'),
             BottomNavigationBarItem(
+              icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
+              activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_ticket_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
               label: 'Ticket',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(FluentSystemIcons.ic_fluent_chat_regular),
-              activeIcon: Icon(FluentSystemIcons.ic_fluent_chat_filled),
-              label: 'Chat',
             ),
             BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_settings_regular),
