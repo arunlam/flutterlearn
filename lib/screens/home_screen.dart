@@ -2,7 +2,7 @@ import 'package:bookticket/screens/hotel_screen.dart';
 import 'package:bookticket/screens/ticket_view.dart';
 import 'package:bookticket/utils/app_info_list.dart';
 import 'package:bookticket/utils/app_styles.dart';
-import 'package:bookticket/widgets/double_text_widget.dart';
+import 'package:bookticket/components/double_text_widget.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';

@@ -25,9 +25,9 @@ class AppStyles {
     color: textColor,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineStyle3 = TextStyle(
+  static TextStyle headlineStyle3 = const TextStyle(
     fontSize: 17,
-    color: Colors.grey.shade500,
+    // color: Colors.grey.shade500,
     fontWeight: FontWeight.w500,
   );
   static TextStyle headlineStyle4 = TextStyle(
